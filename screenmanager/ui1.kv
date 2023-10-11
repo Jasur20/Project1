@@ -1,0 +1,115 @@
+<Main>:
+
+    MDBoxLayout:
+        orientation: 'horizontal'
+        id: box1
+        size_hint_x: 1
+        size_gint_y: 1
+
+        MDFloatLayout:
+            id: float1
+            FitImage:
+                   size_hint_x: 2
+                size_hint_y: 1
+                source: 'C:/Users/User/Desktop/149660-liniya_gorizonta-rozovyj-artist-metropoliya-art-3840x2160.jpg'
+
+
+            MDTextField:
+                id: tx
+                multiline: False
+                size_hint: (1,None)
+                size_hint_x: None
+                icon_left: 'key_variant'
+                width: '300dp'
+                pos_hint: {'center_x': .55,'center_y': .6}
+                eror_color: 'red'
+                font_size: '19sp'
+                mode:'rectangle'
+                max_text_length: 10
+                hint_text: 'Password'
+                helper_text_color_normal: 'red'
+                hint_text_color_normal: 'orange'
+
+            MDIconButton:
+                id: icon1
+                icon: 'eye-off'
+                pos_hint:{'center_x': 0.75,'center_y': 0.6}
+                on_release: root.unknown()
+
+            MagicButton:
+                id: mbutton1
+                text: 'Press'
+                pos_hint:{'center_x': .55, 'center_y': 0.5}
+                on_release: root.dialog_password()
+
+        MDFloatLayout:
+
+            id: float3
+
+            MDIconButton:
+                icon: 'calendar'
+                pos_hint: {'center_x': .8,'center_y': .1}
+                on_release: root.show_data_picker()
+
+            MDIconButton:
+                icon:"key-change"
+                pos_hint: {'center_x': .7,'center_y': .1}
+                on_release: root.dialog_password()
+
+
+<Main2>:
+    MDScreen:
+
+        MDNavigationLayout:
+
+            MDScreenManager:
+
+                MDScreen:
+
+                    MDTopAppBar:
+                        title: "Navigation Drawer"
+                        elevation: 4
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#e7e4c0"
+                        specific_text_color: "#4a4939"
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            radius: (0, 16, 16, 0)
+
+            MDNavigationDrawerMenu:
+
+                MDNavigationDrawerHeader:
+                    title: "Header title"
+                    title_color: "#4a4939"
+                    text: "Header text"
+                    spacing: "4dp"
+                    padding: "12dp", 0, 0, "56dp"
+
+                MDNavigationDrawerLabel:
+                    text: "Mail"
+
+                DrawerClickableItem:
+                    icon: "gmail"
+                    right_text: "+99"
+                    text_right_color: "#4a4939"
+                    text: "Inbox"
+
+                DrawerClickableItem:
+                    icon: "send"
+                    text: "Outbox"
+
+                MDNavigationDrawerDivider:
+
+                MDNavigationDrawerLabel:
+                    text: "Labels"
+
+                DrawerLabelItem:
+                    icon: "information-outline"
+                    text: "Label"
+
+                DrawerLabelItem:
+                    icon: "information-outline"
+                    text: "Label"
+
