@@ -36,7 +36,7 @@ func FindCardsBankWithNum(Phone string) (*sql.Row,error){
 
 	rows:=db.QueryRow("select *from list where phone=$1",Phone)
 	card:=models.List{}
-	err:=rows.Scan(&card.Phone,&card.PAN,&card.Data,&card.CVV,card.NAME)
+	err:=rows.Scan(&card.Phone,&card.PAN,&card.Data,&card.CVV,&card.NAME)
 	if err!=nil{
 		return nil,err
 	}
