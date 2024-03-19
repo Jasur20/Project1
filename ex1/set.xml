@@ -1,0 +1,8 @@
+<payment>
+      <person>
+            <Name>Hello world</Name>
+            <Starsign>as4212q841shf</Starsign>
+            <Amount>2000</Amount>
+            <Data>11.12.23</Data>
+      </person>
+</payment>
