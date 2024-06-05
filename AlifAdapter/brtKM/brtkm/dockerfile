@@ -1,0 +1,10 @@
+FROM golang:alpine3.18 as build
+WORKDIR /src
+COPY . .
+RUN GOARCH=amd64 GOOS=linux go build -o brtkm cmd/main.go
+
+FROM amd64/alpine
+WORKDIR /app
+COPY --from=build /src/cmd/config.yml .
+COPY --from=build /src/brtkm .
+ENTRYPOINT ["./brtkm"]
