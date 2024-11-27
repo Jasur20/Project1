@@ -1,0 +1,12 @@
+appparams:
+  portrun: 8091
+  serverurl: "localhost"
+  token: "test-token"
+  timeout: 15
+dcpay:
+  address: "http://109.74.70.51:5058/test.asp"
+  login: 21950
+  password: 147521
+logs:
+  dir: "./"
+  name: "logs.log"
